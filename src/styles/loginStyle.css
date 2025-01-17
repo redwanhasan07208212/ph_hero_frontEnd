@@ -12,7 +12,6 @@
   padding: 30px; /* Add space inside the form */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  width: 300px; /* Fixed width for the form */
 }
 
 form h2 {
