@@ -1,11 +1,20 @@
-import { useFormContext } from "react-hook-form";
+import { Controller } from "react-hook-form";
 import "../../styles/loginStyle.css";
-export default function PhInput({ type, name, label }) {
-  const { register } = useFormContext();
+import { Input } from "antd";
+
+type TInputProps = {
+  type: string;
+  name: string;
+  label?: string;
+};
+export default function PhInput({ type, name, label }: TInputProps) {
   return (
-    <div>
+    <div style={{ marginBottom: "20px" }}>
       {label ? label : null}
-      <input type={type} id={name} {...register(name)} />
+      <Controller
+        name={name}
+        render={({ field }) => <Input {...field} type={type} id={name} />}
+      />
     </div>
   );
 }
