@@ -22,6 +22,11 @@ export default function Login() {
   //   },
   // });
 
+  const defaultValues = {
+    id: "A-0001",
+    password: "admin123",
+  };
+
   const onSubmit = async (data: FieldValues) => {
     console.log(data);
     const toastId = toast.loading("Logging in");
@@ -46,7 +51,7 @@ export default function Login() {
       align="middle"
       style={{ height: "100vh", marginTop: "10px" }}
     >
-      <PhForm onSubmit={onSubmit}>
+      <PhForm onSubmit={onSubmit} defaultValues={defaultValues}>
         <PhInput type="text" name="id" label="ID" />
         <PhInput type="password" name="password" label="Password" />
         <Button htmlType="submit" className="button">
